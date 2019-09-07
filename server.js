@@ -4,13 +4,10 @@ const { join } = require('path');
 
 const server = http.createServer((req, res) => {
     let {url} = req;
-
-    if(/\/$/.test(url)) {
-        // если обращаемся к '/'
-        url = `${url}index.html`
-    } else if (/^[^.]*$/.test(url)) {
-        // если же обращаемся по пути, не указав, что нам нужен html файл
-        url = `${url}.html`
+    
+    if (/^[^.]+$/.test(url)) {
+        console.log('no dot')
+        url = `${url}${url.endsWith('/') ? '' : '/'}index.html`
     }
 
     try {
@@ -26,6 +23,6 @@ const server = http.createServer((req, res) => {
     res.write(body)
 
     res.end();
-}).listen(8080);
+}).listen(3000);
 
 module.exports = server
