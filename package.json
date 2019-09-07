@@ -1,0 +1,20 @@
+{
+  "name": "frontend_server",
+  "version": "1.0.0",
+  "description": "server for serving static files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "shtoby shto",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto/issues"
+  },
+  "homepage": "https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto#readme"
+}
