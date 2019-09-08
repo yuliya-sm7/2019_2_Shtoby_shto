@@ -13,6 +13,7 @@ const filetypes = {
 const server = http.createServer((req, res) => {
     let currentUrl = url.parse(req.url, true).pathname;
 
+
     if (/^[^.]+$/.test(currentUrl)) {
         if (!currentUrl.endsWith('/')) {
             res.setHeader("Location", req.url + "/");
@@ -21,6 +22,7 @@ const server = http.createServer((req, res) => {
             return
         }
         currentUrl = `${currentUrl}index.html`
+        res.setHeader('Content-Type', `${filetypes['html']}`);
     } else {
         const ft = `${currentUrl.split('.')[1]}`;
         res.setHeader('Content-Type', `${filetypes[ft]}`);
