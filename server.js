@@ -4,6 +4,12 @@ const { join } = require('path');
 
 const url = require('url');
 
+const filetypes = {
+    "html": "text/html",
+    "css" : "text/css",
+    "js"  : "application/javascript"
+};
+
 const server = http.createServer((req, res) => {
     let currentUrl = url.parse(req.url, true).pathname;
 
@@ -15,6 +21,9 @@ const server = http.createServer((req, res) => {
             return
         }
         currentUrl = `${currentUrl}index.html`
+    } else {
+        const ft = `${currentUrl.split('.')[1]}`;
+        res.setHeader('Content-Type', `${filetypes[ft]}`);
     }
 
     const newPath = join(__dirname, `public${currentUrl}`)
@@ -27,7 +36,8 @@ const server = http.createServer((req, res) => {
 
         return;
     }
-    res.writeHead(200, {'Content-Type': 'text/html'})
+    // res.writeHead(200, {'Content-Type': 'text/html'})
+    res.writeHead(200);
 
     res.end(body);
 }).listen(3000);
