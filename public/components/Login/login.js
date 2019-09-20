@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Форма регистрации/авторизации</title>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+export function reg() {
+    application.innerHTML = `
 <div class="cont">
     <div class="form sign-in">
         <h2>С возвращением,</h2>
@@ -56,8 +49,8 @@
         </div>
     </div>
 </div>
-
-<script src="./script.js"></script>
-
-</body>
-</html>
+`;
+    document.querySelector('.img__btn').addEventListener('click', function () {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+}
