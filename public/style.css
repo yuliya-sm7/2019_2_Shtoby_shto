@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('fonts/ProximaNova-Light.eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -5,8 +12,29 @@
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
   background: #ededed;
+}
+
+.sidebar {
+  background: #d43d3a;
+  color: #ededed;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  align-content: center;
+  padding: 50px;
+  text-align: center;
+  flex: 50%;
 }
 
 input, button {
@@ -51,15 +79,16 @@ input, button {
 
 button {
   display: block;
-  margin: 0 auto;
   width: 260px;
   height: 36px;
   border-radius: 30px;
   font-size: 15px;
   cursor: pointer;
+  margin: 40px auto 20px;
+  background: white;
 }
 
-.img {
+.bmstu {
   overflow: hidden;
   z-index: 2;
   position: absolute;
@@ -69,7 +98,7 @@ button {
   height: 100%;
   padding-top: 360px;
 }
-.img:before {
+.bmstu:before {
   content: '';
   position: absolute;
   right: 0;
@@ -80,7 +109,7 @@ button {
   background-size: cover;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
-.img:after {
+.bmstu:after {
   content: '';
   position: absolute;
   left: 0;
@@ -89,7 +118,7 @@ button {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
-.cont.s--signup .img:before {
+.cont.s--signup .bmstu:before {
   -webkit-transform: translate3d(640px, 0, 0);
           transform: translate3d(640px, 0, 0);
 }
@@ -207,9 +236,7 @@ input {
   color: #afafaf;
 }
 
-.submit {
-  margin-top: 40px;
-  margin-bottom: 20px;
+button[type='submit'] {
   background: #d43d3a;
   color: #fff;
   text-transform: uppercase;
@@ -218,6 +245,7 @@ input {
 .vk-btn {
   border: 2px solid #d3dae9;
   color: #8fa1c7;
+  background: white;
 }
 .vk-btn span {
   font-weight: bold;
