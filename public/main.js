@@ -1,10 +1,10 @@
 import {
-    reg
-} from './components/Login/login.js'
+  reg,
+} from './components/Login/login.js';
 
 const application = document.getElementById('application');
 
-const col = document.createElement("div");
+const col = document.createElement('div');
 col.innerHTML = `
 <div class="row">
     <div class="column" id="col1"></div>
@@ -21,9 +21,9 @@ login.type = 'button';
 login.addEventListener('click', reg);
 
 const screen = document.createElement('img');
-screen.src = "hero-a.svg";
+screen.src = 'img/hero-a.svg';
 
-const description = document.createElement("div");
+const description = document.createElement('div');
 description.innerHTML = '<h1>Мы создали</h1> <h1>Чтобы что</h1>';
 
 left.appendChild(screen);

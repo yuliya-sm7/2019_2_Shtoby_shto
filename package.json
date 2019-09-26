@@ -1,0 +1,32 @@
+{
+  "name": "2019_2_shtoby_shto",
+  "version": "1.0.0",
+  "description": "* shtoby to",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto/issues"
+  },
+  "homepage": "https://github.com/frontend-park-mail-ru/2019_2_Shtoby_shto#readme",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-google": "^0.14.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-pug-plugin": "^2.0.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "webpack": "^4.41.0"
+  }
+}
