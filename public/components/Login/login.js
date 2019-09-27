@@ -3,81 +3,14 @@ import {isCorrectPassword} from '../../modules/validation.js';
 import {isCorrectName} from '../../modules/validation.js';
 import {doPost} from '../../modules/ajax.js';
 import {createBoard} from '../../components/Board/board.js';
+const template = require('./login.pug');
 
 /**
  * Генерирует страницу регистрации
  */
 export function reg() {
   const application = document.getElementById('application');
-  application.innerHTML = '';
-  const cont = document.createElement('div');
-  cont.className = 'cont';
-  application.appendChild(cont);
-
-  const signin = ` 
-    <div class="form sign-in">
-        <h2>С возвращением,</h2>
-        <form id="in">
-            <label>
-                <span>Email</span>
-                <input name="email" type="email" value="aaa@mail.ru" />
-            </label>
-            <label>
-                <span>Password</span>
-                <input name="password" type="password" value="qwerty"/>
-            </label>
-        </form>
-        <p class="forgot-pass">Забыли пароль? Ничем не можем вам помочь</p>
-        <div class="errorArea"></div>
-        <button type="submit" form="in">Войти</button>
-        <button class="vk-btn">Войти через <span>ВКонтакте</span></button>
-    </div>`;
-
-  const image = `
-        <div class="bmstu">
-            <div class="img__text m--up">
-                <h2>Первый раз?</h2>
-                <p>Зарегистрируйтесь и откройте для себя
-                 множество новых возможностей!</p>
-            </div>
-            <div class="img__text m--in">
-                <h2>Один из нас?</h2>
-                <p>Если у вас уже есть аккаунт, 
-                просто войдите в систему. 
-                Мы скучали по вам!</p>
-            </div>
-            <div class="img__btn">
-                <span class="m--up">Регистрация</span>
-                <span class="m--in">Вход</span>
-            </div>
-        </div>`;
-
-  const signup = `
-    <div class="form sign-up">
-        <h2>Время почувствовать себя как дома,</h2>
-        <form id="up">
-            <label>
-                <span>Ваше имя</span>
-                <input name="name" type="text"/>
-            </label>
-            <label>
-                <span>Email</span>
-                <input name="email" type="email"/>
-            </label>
-            <label>
-                <span>Password</span>
-                <input name="password" type="password"/>
-            </label>
-        </form>
-        <div class="errorArea"></div>
-        <button type="submit" form="up">Зарегистрироваться</button>
-        <button class="vk-btn">Связать с аккаунтом 
-            <span>ВКонтакте</span>
-        </button>
-    </div>`;
-
-  cont.innerHTML = signin + `<div class="sub-cont">` +
-        image + signup + `</div>`;
+  application.innerHTML = template();
 
   const formIn = document.getElementById('in');
   formIn.addEventListener('submit', function(e) {

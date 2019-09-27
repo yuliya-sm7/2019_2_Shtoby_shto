@@ -4,7 +4,7 @@
   "description": "* shtoby to",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --watch"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

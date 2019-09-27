@@ -5,7 +5,7 @@
  * @return {Promise} promise
  */
 export function doPost(path = '/', body = null) {
-  const promise = fetch('http://localhost:8080' + path, {
+  return fetch('http://localhost:8080' + path, {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
@@ -20,5 +20,4 @@ export function doPost(path = '/', body = null) {
       .then((res) => res.json())
       .then((response) => console.log('Успех:', JSON.stringify(response)))
       .catch((error) => alert(error.message));
-  return promise;
 }

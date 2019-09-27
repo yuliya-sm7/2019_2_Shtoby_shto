@@ -1,9 +1,9 @@
-import compileFileClient from 'pug';
+const template = require('./board.pug');
 /**
  * Генерирует Канбан-доску
  */
 export function createBoard() {
-  const html = compileFileClient('board.pug', {name: 'Aaaaaaaa'});
+  const html = template();
   const application = document.getElementById('application');
   application.innerHTML = html;
 }

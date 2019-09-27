@@ -1,31 +1,15 @@
 const path = require('path');
-const webpack = require('webpack');
-
-const PATHS = {
-    source: path.join(__dirname, 'public'),
-    build: path.join(__dirname, 'build')
-};
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        'index': PATHS.source + '/main.js'
-    },
+    entry: './public/main.js',
     output: {
-        path: PATHS.build,
-        filename: '[name].js'
-    },
-    node: {
-        fs: 'empty'
+        path: __dirname + '/build',
+        filename: 'bundle.js'
     },
     module: {
         rules: [
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-                options: {
-                    pretty: true
-                }
-            }
+            {test: /\.pug$/, loader: 'pug-loader'}
         ]
-    }
+    },
 };
