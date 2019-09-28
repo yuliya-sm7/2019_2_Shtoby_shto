@@ -7,3 +7,6 @@ node_modules
 login/.idea/
 
 public/login/.idea/
+
+package-lock.json
+public/build/bundle.js
