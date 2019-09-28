@@ -1,4 +1,4 @@
-const application = document.getElementById('application');
+const headerContent = document.getElementById('header');
 
 const leftHeadMenuItems={
     home: `Домой`,
@@ -13,9 +13,9 @@ const rightHeadMenuItems={
 };
 
 function createHeadMenu() {
-    application.innerHTML='';
-    application.id = "header";
-    application.style = "line-height: 50px";
+    headerContent.innerHTML='';
+    headerContent.id = "header";
+    headerContent.style = "line-height: 50px";
 
     Object.keys(leftHeadMenuItems).forEach(function (key) {
         const headMenuItem = document.createElement('a');
@@ -23,7 +23,7 @@ function createHeadMenu() {
         headMenuItem.href = `/${key}`;
         headMenuItem.dataset.section = key;
 
-        application.appendChild(headMenuItem);
+        headerContent.appendChild(headMenuItem);
     });
     Object.keys(rightHeadMenuItems).forEach(function (key) {
         const headMenuItem = document.createElement('a');
@@ -32,7 +32,7 @@ function createHeadMenu() {
         headMenuItem.href = `/${key}`;
         headMenuItem.dataset.section = key;
 
-        application.appendChild(headMenuItem);
+        headerContent.appendChild(headMenuItem);
     });
 }
 
