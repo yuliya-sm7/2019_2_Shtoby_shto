@@ -8,5 +8,5 @@ login/.idea/
 
 public/login/.idea/
 
-package-lock.json
-public/build/bundle.js
+./package-lock.json
+./public/build/bundle.js
