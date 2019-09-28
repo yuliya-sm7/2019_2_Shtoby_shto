@@ -1,14 +1,14 @@
-// import {reg} from './components/Login/login.js';
-// import {viewPUG} from './components/PUG/viewPug.js';
+import {reg} from './components/Login/login.js';
+import {viewPUG} from './components/PUG/viewPug.js';
 // import {createBoard} from './components/Board/board.js';
 // import {profile} from "./components/Profile/profile.js";
 
 import Utils from './components/services/Utils.js'
 
 const routes = {
-  // '/': reg,
+  '/': reg,
   // '/profile': profile,
-  // '/pug': viewPug,
+  '/pug': viewPUG,
 };
 
 const router = async () => {
