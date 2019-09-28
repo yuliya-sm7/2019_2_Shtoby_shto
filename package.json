@@ -4,7 +4,8 @@
   "description": "* shtoby to",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
