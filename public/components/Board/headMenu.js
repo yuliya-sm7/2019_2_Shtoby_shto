@@ -1,39 +1,46 @@
-const headerContent = document.getElementById('header');
+const template = require('./headMenu.pug');
 
-const leftHeadMenuItems={
-    home: `Домой`,
-    create: `Создать`,
-};
+export function createHeader() {
+    console.log('creating header')
 
-const rightHeadMenuItems={
-    profile: `Профиль`,
-    notifications: `Уведомления`,
-    info: `Информация`,
-    mainPage: `Trello`,
-};
+    const headerContent = document.getElementById('header');
+    
+    // const leftHeadMenuItems={
+    // home: `Домой`,
+    // create: `Создать`,
+    // };
 
-function createHeadMenu() {
-    headerContent.innerHTML='';
-    headerContent.id = "header";
-    headerContent.style = "line-height: 50px";
+// const rightHeadMenuItems={
+//     profile: `Профиль`,
+//     notifications: `Уведомления`,
+//     info: `Информация`,
+//     mainPage: `Trello`,
+//     };
 
-    Object.keys(leftHeadMenuItems).forEach(function (key) {
-        const headMenuItem = document.createElement('a');
-        headMenuItem.textContent = leftHeadMenuItems[key];
-        headMenuItem.href = `/${key}`;
-        headMenuItem.dataset.section = key;
+    function createHeadMenu() {
+        headerContent.innerHTML = template();
+    // headerContent.innerHTML='';
+    // headerContent.id = "header";
+    // headerContent.style = "line-height: 50px";
+    
+    // Object.keys(leftHeadMenuItems).forEach(function (key) {
+    //     const headMenuItem = document.createElement('a');
+    //     headMenuItem.textContent = leftHeadMenuItems[key];
+    //     headMenuItem.href = `/#${key}`;
+    //     headMenuItem.dataset.section = key;
+        
+    //     headerContent.appendChild(headMenuItem);
+    // });
+    // Object.keys(rightHeadMenuItems).forEach(function (key) {
+    //     const headMenuItem = document.createElement('a');
+    //     headMenuItem.style = "float: right";
+    //     headMenuItem.textContent = rightHeadMenuItems[key];
+    //     headMenuItem.href = `/#${key}`;
+    //     headMenuItem.dataset.section = key;
+        
+    //     headerContent.appendChild(headMenuItem);
+    // });
+    }
 
-        headerContent.appendChild(headMenuItem);
-    });
-    Object.keys(rightHeadMenuItems).forEach(function (key) {
-        const headMenuItem = document.createElement('a');
-        headMenuItem.style = "float: right";
-        headMenuItem.textContent = rightHeadMenuItems[key];
-        headMenuItem.href = `/${key}`;
-        headMenuItem.dataset.section = key;
-
-        headerContent.appendChild(headMenuItem);
-    });
+    createHeadMenu();
 }
-
-createHeadMenu();
