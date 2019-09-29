@@ -1,6 +1,6 @@
 import {doPut} from '../../modules/ajax';
 import {getCookie} from "../../modules/cookies_util";
-import {isCorrectName, isCorrectPassword} from "../../modules/validation";
+import {isCorrectName, isCorrectPassword, isCorrectEmail} from "../../modules/validation";
 
 /**
  * Work with profile
@@ -29,21 +29,21 @@ export function profile() {
     const userId = getCookie('user_id');
 
     const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
-    const checkName = isCorrectName(newName.value);
+    const checkName = isCorrectEmail(newName.value);
 
-    if (checkName.status && checkPassword.status){
-    doPut(`/user/${userId}`, {'user': newName.value, 'password': newPassword.value})
-        .then((response) => {
-          if (response.status !== 200)
-            alert(response.message);
-          else {
-            location.href = '#/';
-          }
-        }).catch((response) => {
-          alert(`ошибка:${response}`);
-        });
-  } else{
-    alert("Invalid data!")
+    if (checkName.status && checkPassword.status) {
+      doPut(`/user/${userId}`, {'login': newName.value, 'password': newPassword.value})
+          .then((response) => {
+            if (response.status !== 200) {
+              console.log(response.message);
+            } else {
+              location.href = '#/';
+            }
+          }).catch((response) => {
+            alert(`ошибка:${response}`);
+          });
+    } else {
+      alert(`Invalid data! ${checkName.status ? '' : checkName.err}, ${checkPassword.status ? '' : chechName.err}`);
     }
   });
 }
