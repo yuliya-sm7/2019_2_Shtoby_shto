@@ -23,7 +23,7 @@ export function reg() {
     const password = formIn.elements['password'].value;
     const area = document.getElementsByClassName('errorArea').item(0);
 
-    if (checkEmail(email) && checkPassword(password, password)) {
+    if (checkEmail(email) && checkPassword(password)) {
       doPost('/login', {'login': email, 'password': password})
           .then((response) => {
             if (response.status !== 200) {
@@ -52,7 +52,7 @@ export function reg() {
     const name = formUp.elements['name'].value;
     const area = document.getElementsByClassName('errorArea').item(1);
 
-    if (checkEmail(email) && checkPassword(password, password) && checkName(name)) {
+    if (checkEmail(email) && checkPassword(password) && checkName(name)) {
       doPost('/registration', {'login': email, 'password': password})
           .then((response) => {
             createBoard();

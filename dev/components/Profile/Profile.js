@@ -35,10 +35,7 @@ export function profile() {
             const newPassword = document.getElementById('password');
 
             const validEmail = checkEmail(newName.value);
-            const validPassword = checkPassword(
-                newPassword.value,
-                newPassword.value
-            );
+            const validPassword = checkPassword(newPassword.value);
 
             if (validEmail && validPassword) {
               doPut(`/user`, {'login': newName.value, 'password': newPassword.value})

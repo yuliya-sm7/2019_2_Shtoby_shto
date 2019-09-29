@@ -1,5 +1,7 @@
 const nameRegexp = /^[a-zA-Z][a-zA-Z0-9_.,-]{4,14}$/;
-const emailRegexp = /^([a-z0-9_\\-]+\.)*[a-z0-9_\\-]+@([a-z0-9][a-z0-9\\-]*[a-z0-9]\.)+[a-z]{2,4}$/i
+const emailRegexp = /^([a-z0-9_\\-]+\.)*[a-z0-9_\\-]+@([a-z0-9][a-z0-9\\-]*[a-z0-9]\.)+[a-z]{2,4}$/i;
+
+const minPassLength = 6;
 
 /**
  * Проверяет коректность ника
@@ -21,10 +23,9 @@ export function checkEmail(email = '') {
 
 /**
  * Проверяет коректность пароля
- * @param {String} password1 Пароль
- * @param {String} password2 И его повторение
+ * @param {String} password Пароль
  * @return {boolean} validate
  */
-export function checkPassword(password1 = '', password2 = '') {
-  return password1.length >= 6 && password1 === password2;
+export function checkPassword(password) {
+  return password.length >= minPassLength;
 }
