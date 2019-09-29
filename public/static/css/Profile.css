@@ -275,10 +275,10 @@ a.tabs {
     background: #FFFFFF;
 }
 
-#tab_1:checked ~ #Профиль\ и\ доступ {
+#tab_1:checked ~ #Profile {
     display: block;
 }
 
-#tab_2:checked ~ #Действия,
-#tab_3:checked ~ #Карточки,
-#tab_4:checked ~ #Настройки
+#tab_2:checked ~ #Action,
+#tab_3:checked ~ #Cards,
+#tab_4:checked ~ #Settings
