@@ -6,8 +6,6 @@ import {createBoard} from '../Board/board.js';
 
 const template = require('./login.pug');
 
-// import {getCookie, setCookie, deleteCookie } from '../../modules/cookies_util';
-
 /**
  * Генерирует страницу регистрации
  */
@@ -31,9 +29,6 @@ export function reg() {
             if (response.status !== 200) {
               area.innerText = response.message;
             } else {
-              // setCookie('user_id', response.user.id);
-              // setCookie('login', response.user.login);
-              // setCookie('password', response.user.password);
               createBoard();
             }
           }).catch(() => {
@@ -44,7 +39,7 @@ export function reg() {
     }
   });
 
-  const formUp = document.getElementsByTagName('form')[1];;
+  const formUp = document.getElementsByTagName('form')[1];
 
   console.log(formUp);
 
@@ -60,13 +55,10 @@ export function reg() {
     if (checkEmail(email) && checkPassword(password, password) && checkName(name)) {
       doPost('/registration', {'login': email, 'password': password})
           .then((response) => {
-            // setCookie('user_id', response.user.id);
-            // setCookie('login', response.user.login);
-            // setCookie('password', response.user.password);
             createBoard();
           })
           .catch(() => {
-              area.innerText = 'такой пользователь мол есть уже';
+            area.innerText = 'такой пользователь мол есть уже';
           });
     } else {
       area.innerText = 'Некорректный ввод!';
