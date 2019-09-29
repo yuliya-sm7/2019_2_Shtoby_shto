@@ -21,6 +21,9 @@ export function doPost(path = '/', body = null) {
     body: JSON.stringify(body),
   })
       .then((res) => res.json())
-      .then((response) => console.log('Успех:', JSON.stringify(response)))
+      .then((response) => {
+        console.log('Успех:', JSON.stringify(response));
+        return response;
+      })
       .catch((error) => alert(error.message));
 }

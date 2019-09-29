@@ -25,7 +25,11 @@ export function reg() {
           .then((response) => {
             if (response.status !== 200) {
               alert(response.message);
-            } else createBoard();
+            } else {
+              createBoard();
+            };
+          }).catch(() => {
+            console.log('login unsuccesful');
           });
     } else {
       const area = document.getElementsByClassName('errorArea').item(0);
