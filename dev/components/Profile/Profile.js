@@ -1,6 +1,6 @@
-import {doPut, doGet} from '../../modules/ajax';
-import {getCookie} from "../../modules/cookies_util";
-import {isCorrectName, isCorrectPassword, isCorrectEmail} from "../../modules/validation";
+import {doPut} from '../../modules/ajax';
+import {getCookie} from '../../modules/cookies_util';
+import {checkName, checkPassword, checkEmail} from '../../modules/validation';
 
 const template = require('./Profile.pug');
 /**

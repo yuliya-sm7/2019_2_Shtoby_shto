@@ -1,7 +1,14 @@
 head
-#header(style="line-height: 70px;")
-    a(href="#/" data-section="home") Домой
-    a(href="#/board") Доска
-    a(href="#/login" style="float: right;") Войти
-    a(href="#/profile" style="float: right;") Профиль
-    a(href="#/info" style="float: right;") О нас
+    #header
+        ul
+            li
+                a(href="#/" data-section="home") Домой
+            li
+                a(href="#/board") Доска
+            .rightside
+                li
+                    a(href="#/login") Войти
+                li
+                    a(href="#/profile") Профиль
+                li
+                    a(href="#/info") О нас
