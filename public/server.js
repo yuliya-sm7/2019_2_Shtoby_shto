@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', `${filetypes[ft]}`);
     }
 
-    const newPath = join(__dirname, `../public${currentUrl}`)
+    const newPath = join(__dirname, `${currentUrl}`)
 
     try {
         body = fs.readFileSync(newPath)
