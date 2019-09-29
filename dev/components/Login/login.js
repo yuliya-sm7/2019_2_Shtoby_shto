@@ -6,7 +6,7 @@ import {createBoard} from '../Board/board.js';
 
 const template = require('./login.pug');
 
-import {getCookie, setCookie, deleteCookie } from '../../modules/cookies_util';
+// import {getCookie, setCookie, deleteCookie } from '../../modules/cookies_util';
 
 /**
  * Генерирует страницу регистрации
@@ -28,9 +28,9 @@ export function reg() {
             if (response.status !== 200) {
               alert(response.message);
             } else {
-              setCookie('user_id', response.user.id);
-              setCookie('login', response.user.login);
-              setCookie('password', response.user.password);
+              // setCookie('user_id', response.user.id);
+              // setCookie('login', response.user.login);
+              // setCookie('password', response.user.password);
               createBoard();
             };
           }).catch(() => {
@@ -54,9 +54,9 @@ export function reg() {
     if (checkEmail.status && checkPassword.status && checkName.status) {
       doPost('/registration', {'login': email, 'password': password})
           .then((response) => {
-            setCookie('user_id', response.user.id);
-            setCookie('login', response.user.login);
-            setCookie('password', response.user.password);
+            // setCookie('user_id', response.user.id);
+            // setCookie('login', response.user.login);
+            // setCookie('password', response.user.password);
             createBoard();
           })
           .catch(() => {

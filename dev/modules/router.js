@@ -16,6 +16,7 @@ export const router = async () => {
   const parsedURL = (request.resource ? '/' + request.resource : '/');
 
   const page = routes[parsedURL];
+  console.log(parsedURL);
   page();
 };
 

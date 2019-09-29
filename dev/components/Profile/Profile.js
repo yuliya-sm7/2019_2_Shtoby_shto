@@ -1,7 +1,8 @@
-import {doPut} from '../../modules/ajax';
+import {doPut, doGet} from '../../modules/ajax';
 import {getCookie} from "../../modules/cookies_util";
 import {isCorrectName, isCorrectPassword, isCorrectEmail} from "../../modules/validation";
 
+const template = require('./Profile.pug');
 /**
  * Work with profile
  *
@@ -9,41 +10,51 @@ import {isCorrectName, isCorrectPassword, isCorrectEmail} from "../../modules/va
  * @returns {} tabsName some info in header
  */
 export function profile() {
-  const template = require('./Profile.pug');
-  const application = document.getElementById('application');
+  const user = {};
 
-  application.innerHTML = template();
+  doGet('/user')
+      .then((response) => {
+        if (!response) {
+          location.href = '#/';
+        } else {
+          user['login'] = response.login;
+          user['password'] = response.password;
+          user['id'] = response.id;
 
-  const username = document.getElementById('username');
-  username.value=getCookie('login');
+          application.innerHTML = template();
 
-  const password = document.getElementById('password');
-  password.value = getCookie('password');
+          const username = document.getElementById('username');
+          username.value = user.login;
 
-  const button = document.getElementsByClassName('saveButton')[0];
+          const password = document.getElementById('password');
+          password.value = user.password;
 
-  button.addEventListener('click', () => {
-    const newName = document.getElementById('username');
-    const newPassword = document.getElementById('password');
+          const button = document.getElementsByClassName('saveButton')[0];
 
-    const userId = getCookie('user_id');
+          button.addEventListener('click', () => {
+            const newName = document.getElementById('username');
+            const newPassword = document.getElementById('password');
 
-    const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
-    const checkName = isCorrectEmail(newName.value);
+            const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
+            const checkName = isCorrectEmail(newName.value);
 
-    if (checkName.status && checkPassword.status) {
-      doPut(`/user/${userId}`, {'login': newName.value, 'password': newPassword.value})
-          .then((response) => {
-            if (response.status !== 200) {
-              console.log(response.message);
+            if (checkName.status && checkPassword.status) {
+              doPut(`/user`, {'login': newName.value, 'password': newPassword.value})
+                  .then((response) => {
+                    console.log(response);
+                    if (response.status !== 200) {
+                      console.log(response.message);
+                      location.href = '/';
+                    } else {
+                      location.href = '#';
+                    }
+                  }).catch((response) => {
+                    alert(`ошибка:${response}`);
+                  });
             } else {
-              location.href = '#/';
+              alert(`Invalid data! ${checkName.status ? '' : checkName.err}, ${checkPassword.status ? '' : chechName.err}`);
             }
-          }).catch((response) => {
-            alert(`ошибка:${response}`);
           });
-    } else {
-      alert(`Invalid data! ${checkName.status ? '' : checkName.err}, ${checkPassword.status ? '' : chechName.err}`);
-    }
-  });
+        }
+      });
 }

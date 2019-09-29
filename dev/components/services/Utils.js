@@ -7,6 +7,7 @@
 const Utils = {
   parseRequestUrl: () => {
     const url = location.hash.slice(1).toLowerCase() || '/';
+    console.log(url);
     const r = url.split('/');
     const request = {
       resource: null,
