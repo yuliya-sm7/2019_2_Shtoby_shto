@@ -149,24 +149,23 @@ export function profile() {
 
   application.innerHTML = template();
 
-  const username = document.getElementById("username");
-  username.value=getCookie("login");
+  const username = document.getElementById('username');
+  username.value=getCookie('login');
 
-  const password = document.getElementById("password");
-  password.value = getCookie("password");
+  const password = document.getElementById('password');
+  password.value = getCookie('password');
 
   const button = document.getElementsByClassName('saveButton')[0];
 
   button.addEventListener('click', () => {
-    const newName = document.getElementById("username");
-    const newPassword = document.getElementById("password");
+    const newName = document.getElementById('username');
+    const newPassword = document.getElementById('password');
 
+    const userId = getCookie('user_id');
 
-    doPut('/user/1', {'user': newName, 'password': newPassword})
-  .then(() => {
+    doPut(`/user/${userId}`, {'user': newName, 'password': newPassword})
+        .then(() => {
           location.href='#/';
         });
   });
-
-
 }
