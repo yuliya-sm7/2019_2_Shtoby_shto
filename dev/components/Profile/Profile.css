@@ -269,7 +269,7 @@ textarea{
     background: #FFFFFF;
 }
 
-#tab_1:checked ~ #Профиль\ и\ доступ,
+#tab_1:checked ~ #Профиль\ и\ доступ { display: block; }
 #tab_2:checked ~ #Действия,
 #tab_3:checked ~ #Карточки,
-#tab_4:checked ~ #Настройки { display: block; }
+#tab_4:checked ~ #Настройки

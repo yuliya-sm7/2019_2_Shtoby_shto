@@ -138,6 +138,7 @@
 //
 
 import {doPut} from '../../modules/ajax';
+import {getCookie} from "../../modules/cookies_util";
 
 /**
  * Генерирует Профиль
@@ -148,13 +149,24 @@ export function profile() {
 
   application.innerHTML = template();
 
+  const username = document.getElementById("username");
+  username.value=getCookie("login");
+
+  const password = document.getElementById("password");
+  password.value = getCookie("password");
+
   const button = document.getElementsByClassName('saveButton')[0];
 
   button.addEventListener('click', () => {
-    doPut('/user/1', {})
-        .then(() => {
+    const newName = document.getElementById("username");
+    const newPassword = document.getElementById("password");
+
+
+    doPut('/user/1', {'user': newName, 'password': newPassword})
+  .then(() => {
           location.href='#/';
         });
   });
+
 
 }
