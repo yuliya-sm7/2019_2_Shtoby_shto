@@ -28,8 +28,8 @@ export function profile() {
 
     const userId = getCookie('user_id');
 
-    const checkPassword = isCorrectPassword(password, password);
-    const checkName = isCorrectName(name);
+    const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
+    const checkName = isCorrectName(newName.value);
 
     if (checkName.status && checkPassword.status){
     doPut(`/user/${userId}`, {'user': newName.value, 'password': newPassword.value})
