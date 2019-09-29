@@ -7,7 +7,8 @@ const url = require('url');
 const filetypes = {
     "html": "text/html",
     "css" : "text/css",
-    "js"  : "application/javascript"
+    "js"  : "application/javascript",
+    "svg" : "image/svg+xml"
 };
 
 const server = http.createServer((req, res) => {
