@@ -105,7 +105,7 @@ button {
   top: 0;
   width: 900px;
   height: 100%;
-  background-image: url(./components/Login/vidymgtu002.jpg);
+  background-image: url(../dev/components/Login/vidymgtu002.jpg);
   background-size: cover;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
 }
@@ -452,3 +452,23 @@ hr {
 #tab_2:checked ~ #Действия,
 #tab_3:checked ~ #Карточки,
 #tab_4:checked ~ #Настройки { display: block; }
+
+#header {width:100%; height:50px; background:#4E729A;margin:-20px auto 0;border-radius:0 0 15px 15px;}
+#header ul li {float:left; width:130px;text-align:center; vertical-align:middle; height:50px}
+#header ul {list-style:none;}
+#header ul li:hover{background:blue;color:white;}
+
+a{
+  float:left;
+  width:130px;
+  text-align:center;
+  vertical-align:middle;
+  height:50px;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  background:lightblue;
+  color:white;
+}
