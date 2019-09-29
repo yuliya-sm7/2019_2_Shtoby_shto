@@ -13,7 +13,6 @@ export function profile() {
   const application = document.getElementById('application');
 
   application.innerHTML = template();
-  application.innerHTML += ` <link rel="stylesheet" href="./Profile.css">`;
 
   const username = document.getElementById('username');
   username.value=getCookie('login');

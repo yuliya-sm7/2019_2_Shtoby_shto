@@ -20,10 +20,25 @@
 }
 
 #header ul li:hover {
-    background: blue;
+    background: lightblue;
     color: white;
 }
 
 .rightside{
     float: right;
+}
+
+a{
+    float:left;
+    width:130px;
+    text-align:center;
+    vertical-align:middle;
+    height:50px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    background:lightblue;
+    color:white;
 }

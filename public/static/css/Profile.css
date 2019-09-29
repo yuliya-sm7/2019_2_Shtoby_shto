@@ -2,7 +2,7 @@
     list-style: none;
     padding: 0;
     width: 100%;
-    height:40px;
+    height: 40px;
     text-align: center;
     margin: 0 0 0;
     /*border-radius:15px 15px 0 0;*/
@@ -51,7 +51,7 @@
     margin: -6px;
 }
 
-.tabcontent h3{
+.tabcontent h3 {
     text-align-last: left;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .tabcontent hr {
-    background-color: rgba(9,30,66,.13);
+    background-color: rgba(9, 30, 66, .13);
     border: 0;
     height: 1px;
     margin: 16px 0;
@@ -98,17 +98,18 @@
     float: left;
 }
 
-.col-2-3{
+.col-2-3 {
     width: 66.6666666667%;
     float: left;
 }
-.container:after, .row:after{
+
+.container:after, .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-input{
+input {
     display: block;
 }
 
@@ -125,7 +126,7 @@ input{
 }
 
 
-.aboutYou{
+.aboutYou {
     text-align-last: left;
     width: 90%;
     height: 100px;
@@ -138,10 +139,10 @@ input{
 }
 
 
-.saveButton{
+.saveButton {
     width: 90%;
     height: 40px;
-    margin-top:40px;
+    margin-top: 40px;
     border-radius: 3px;
     background-color: green;
     box-shadow: none;
@@ -150,14 +151,14 @@ input{
     text-align-last: center;
 }
 
-h1{
+h1 {
     font-size: 24px;
     font-weight: 600;
     line-height: 28px;
     margin: 0 0 12px;
 }
 
-h2{
+h2 {
     font-size: 20px;
     font-weight: 600;
     line-height: 28px;
@@ -165,7 +166,7 @@ h2{
     color: #0c3953;
 }
 
-h3{
+h3 {
     font-size: 15px;
     font-weight: 600;
     line-height: 28px;
@@ -173,7 +174,7 @@ h3{
     color: #091e42;
 }
 
-textarea{
+textarea {
     resize: none;
     width: 90%;
     height: 50px;
@@ -186,28 +187,28 @@ textarea{
     padding: 8px 0 8px 15px;
 }
 
-.sorts{
+.sorts {
     margin: auto;
     max-width: 800px;
 }
 
-.sorts ul{
+.sorts ul {
     list-style: none;
 }
 
-.sorts ul li{
+.sorts ul li {
     float: left;
-    margin:0 10px;
-    vertical-align:middle;
+    margin: 0 10px;
+    vertical-align: middle;
     padding: 10px;
 }
 
-.sorts ul li:hover{
+.sorts ul li:hover {
     background-color: lightgray;
     padding: 10px;
 }
 
-.setting{
+.setting {
     margin: auto;
     max-width: 600px;
     text-align-last: left;
@@ -216,7 +217,7 @@ textarea{
     word-wrap: break-word;
 }
 
-.setting a{
+.setting a {
     border-radius: 3px;
     display: block;
     margin: 0 0 4px 0;
@@ -228,17 +229,21 @@ textarea{
     color: #0c3953;
 }
 
-.setting a:hover{
+.setting a:hover {
     background-color: lightgray;
 }
 
-.setting h3{
+.setting h3 {
     margin-top: 40px;
 }
 
 
+.tabs {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
 
-.tabs { width: 100%; padding: 0; margin: 0 auto; }
 /*.tabs input { display:none; }*/
 .tabs .tabcontent {
     display: none;
@@ -247,12 +252,12 @@ textarea{
     background: #FFFFFF;
 }
 
-a.tabs{
+a.tabs {
     display: block;
     color: black;
 }
 
-.tabs>label {
+.tabs > label {
     display: inline-block;
     padding: 7px;
     margin: 0 -5px -1px 0;
@@ -262,14 +267,18 @@ a.tabs{
     background: #E0E0E0;
     cursor: pointer;
 }
-.tabs>input:checked + label {
+
+.tabs > input:checked + label {
     color: #000000;
     border: 1px solid #C0C0C0;
     border-bottom: 1px solid #FFFFFF;
     background: #FFFFFF;
 }
 
-#tab_1:checked ~ #Профиль\ и\ доступ { display: block; }
+#tab_1:checked ~ #Профиль\ и\ доступ {
+    display: block;
+}
+
 #tab_2:checked ~ #Действия,
 #tab_3:checked ~ #Карточки,
 #tab_4:checked ~ #Настройки
