@@ -1,20 +1,18 @@
-import {doPost} from "../../modules/ajax";
-import {main} from "../../../public";
+import {doPost} from '../../modules/ajax';
 const template = require('./board.pug');
 
 /**
  * Генерирует Канбан-доску
- *
- * @param {}
- * @returns {}
  */
 export function createBoard() {
-    const html = template();
-    const application = document.getElementById('application');
-    application.innerHTML = html;
-    const logout = document.getElementById('logout');
-    logout.addEventListener('click', () => {
-      doPost('/logout', {})
-          .then(() => main())
-    })
+  const html = template();
+  const application = document.getElementById('application');
+  application.innerHTML = html;
+  const logout = document.getElementById('logout');
+  logout.addEventListener('click', () => {
+    doPost('/logout', {})
+        .then(() => {
+          location.href='#/';
+        });
+  });
 }

@@ -1,6 +1,8 @@
-const template = require('./headMenu.pug');
-
+/**
+ * Генерирует верхнюю панель
+ */
 export function createHeader() {
-    const headerContent = document.getElementById('header');
-    headerContent.innerHTML = template();
+  const template = require('./headMenu.pug');
+  const headerContent = document.getElementById('header');
+  headerContent.innerHTML = template();
 }

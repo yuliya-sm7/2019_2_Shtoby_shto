@@ -137,13 +137,11 @@
 //         // });
 //
 
-
-export function profile(app) {
-const template = require("./Profile.pug");
-
-function CreateProfile() {
-    const application = document.getElementById('application');
-    application.innerHTML = template();
+/**
+ * Генерирует Профиль
+ */
+export function profile() {
+  const template = require('./Profile.pug');
+  const application = document.getElementById('application');
+  application.innerHTML = template();
 }
-
-    CreateProfile();}
