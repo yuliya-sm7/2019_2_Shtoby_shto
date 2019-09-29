@@ -164,8 +164,11 @@ export function profile() {
     const userId = getCookie('user_id');
 
     doPut(`/user/${userId}`, {'user': newName, 'password': newPassword})
-        .then(() => {
+        .then((response) => {
           location.href='#/';
+        })
+        .catch((response) => {
+          alert(`ошибка:{response}`);
         });
   });
 }
