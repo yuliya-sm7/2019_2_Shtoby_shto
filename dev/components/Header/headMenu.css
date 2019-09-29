@@ -4,6 +4,7 @@
     background: #4E729A;
     margin: -20px auto 0;
     border-radius: 0 0 15px 15px;
+    line-height: 70px;
 }
 
 #header ul li {
@@ -23,17 +24,6 @@
     color: white;
 }
 
-a {
-    float: left;
-    width: 130px;
-    text-align: center;
-    vertical-align: middle;
-    height: 50px;
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    background: lightblue;
-    color: white;
+.rightside{
+    float: right;
 }
