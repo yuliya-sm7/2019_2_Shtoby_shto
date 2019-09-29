@@ -1,5 +1,5 @@
 import {doPost} from "../../modules/ajax";
-import {main} from "../../main";
+import {main} from "../../../public";
 const template = require('./board.pug');
 
 /**

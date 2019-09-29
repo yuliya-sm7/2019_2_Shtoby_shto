@@ -5,12 +5,10 @@
  * @returns {} tabsName some info in header
  */
 
-export function profile(app) {
+export function profile() {
 
-    // const application = document.getElementById("application");
-    const application = app
-    app.innerHTML = ""
-    // const application = document.getElementById("contentID")
+    const application = document.getElementById("application");
+    application.innerHTML = "";
 
     const tabsName = {
         more: `Профиль и доступ`,
