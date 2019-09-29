@@ -1,3 +1,9 @@
+/**
+ * Разбор Url параметров запоса
+ *
+ * @param {}
+ * @returns {Object} request запрос
+ */
 const Utils = {
   parseRequestUrl: () => {
     const url = location.hash.slice(1).toLowerCase() || '/';

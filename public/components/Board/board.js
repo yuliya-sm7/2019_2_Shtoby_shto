@@ -4,6 +4,9 @@ const template = require('./board.pug');
 
 /**
  * Генерирует Канбан-доску
+ *
+ * @param {}
+ * @returns {}
  */
 export function createBoard() {
     const html = template();
