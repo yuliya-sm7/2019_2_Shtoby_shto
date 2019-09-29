@@ -47,9 +47,11 @@ export function reg() {
     const checkPassword = isCorrectPassword(password, password);
     const checkName = isCorrectName(name);
     if (checkEmail.status && checkPassword.status && checkName.status) {
-      doPost('/login', {'login': email, 'password': password, 'name': name})
+      doPost('/registration', {'login': email, 'password': password})
           .then(() => createBoard())
-          .catch(() => createBoard()); // временно
+          .catch(() => {
+            alert('такой пользователь мол есть уже');
+          }); // временно
     } else {
       const area = document.getElementsByClassName('errorArea').item(1);
       area.innerText = [checkEmail.err, checkPassword.err, checkName.err]

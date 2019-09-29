@@ -137,11 +137,24 @@
 //         // });
 //
 
+import {doPut} from '../../modules/ajax';
+
 /**
  * Генерирует Профиль
  */
 export function profile() {
   const template = require('./Profile.pug');
   const application = document.getElementById('application');
+
   application.innerHTML = template();
+
+  const button = document.getElementsByClassName('saveButton')[0];
+
+  button.addEventListener('click', () => {
+    doPut('/user/1', {})
+        .then(() => {
+          location.href='#/';
+        });
+  });
+
 }
