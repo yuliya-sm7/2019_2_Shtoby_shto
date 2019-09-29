@@ -27,7 +27,6 @@ export function reg() {
                         alert(response.message);
                     } else createBoard()
                 })
-                .catch(() => createBoard()); // временно
         } else {
             const area = document.getElementsByClassName('errorArea').item(0);
             area.innerText = [checkEmail.err, checkPassword.err].join(' ');
