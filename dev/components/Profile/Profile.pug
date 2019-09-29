@@ -11,7 +11,7 @@ section(style="text-align-last: center")
         input#tab_4(type="radio" name="inset" value="")
         label(for="tab_4") Настройки
 
-        .tabcontent.word(id="Профиль и доступ")
+        .tabcontent.word(id="Profile")
             img(style="margin-top: 50px" src="static/img/profilewolf.svg" alt="")
             h1 Управление персональными данными
             p
@@ -47,21 +47,20 @@ section(style="text-align-last: center")
             h3 Электронная почта
             textarea(readonly="" style="text-align-last: left;") user@mail.com
             button(onclick="mailChange(event)") Сменить или добавить почту
-        .tabcontent.word(id="Действия" style="text-align-last: left")
+        .tabcontent.word(id="Actions" style="text-align-last: left")
             h2(style="margin-top: 40px") Команды
             hr
             h2 Действия
             hr
             button Загрузить больше действий
-        .tabcontent.sorts(id="Карточки")
+        .tabcontent.sorts(id="Cards")
             ul(style="line-height: 50px")
                 li Сортировка по доске
                 li Показ карточек со всех досок
                 li Показ активных за последний месяц
-        .tabcontent.setting(id="Настройки")
+        .tabcontent.setting(id="Settings")
             h3 Подробности аккаунта
             hr
-            a(href="/") Изменить пароль
             a(href="/") Сменить язык...
             h3 Уведомления
             hr
