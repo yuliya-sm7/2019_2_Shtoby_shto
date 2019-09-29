@@ -1,16 +1,17 @@
 .cont
     .form.sign-in
-        h2 С возвращением,
-        form
+        h2 С возвращением
+        form(id='in')
             label
                 span Email
                 input(name='email' type='email' value='aaa@mail.ru')
             label
                 span Password
                 input(name='password' type='password' value='qwerty')
-        p.forgot-pass Забыли пароль? Ничем не можем вам помочь
-        .errorArea
-        button(type='submit' form='in') Войти
+            label
+                p.forgot-pass Забыли пароль? Ничем не можем вам помочь
+                .errorArea
+            button(type='submit' form='in') Войти
         button.vk-btn
             | Войти через
             span ВКонтакте
@@ -32,7 +33,7 @@
                 span.m--in Вход
         .form.sign-up
             h2 Время почувствовать себя как дома,
-            form
+            form(id='up')
                 label
                     span Ваше имя
                     input(name='name' type='text')

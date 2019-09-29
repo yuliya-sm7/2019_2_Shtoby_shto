@@ -16,7 +16,10 @@ export function reg() {
   application.innerHTML = template();
 
   const formIn = document.getElementsByTagName('form')[0];
+
   formIn.addEventListener('submit', (e) => {
+    console.log('this code executes');
+
     e.preventDefault();
     const email = formIn.elements['email'].value;
     const password = formIn.elements['password'].value;
@@ -42,7 +45,12 @@ export function reg() {
   });
 
   const formUp = document.getElementsByTagName('form')[1];;
+
+  console.log(formUp);
+
   formUp.addEventListener('submit', (e) => {
+    console.log('this code executes');
+
     e.preventDefault();
     const email = formUp.elements['email'].value;
     const password = formUp.elements['password'].value;
