@@ -1,5 +1,4 @@
-import {doPut} from '../../modules/ajax';
-import {getCookie} from '../../modules/cookies_util';
+import {doPut, doGet} from '../../modules/ajax';
 import {checkName, checkPassword, checkEmail} from '../../modules/validation';
 
 const template = require('./Profile.pug');
@@ -35,10 +34,13 @@ export function profile() {
             const newName = document.getElementById('username');
             const newPassword = document.getElementById('password');
 
-            const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
-            const checkName = isCorrectEmail(newName.value);
+            const validEmail = checkEmail(newName.value);
+            const validPassword = checkPassword(
+                newPassword.value,
+                newPassword.value
+            );
 
-            if (checkName.status && checkPassword.status) {
+            if (validEmail && validPassword) {
               doPut(`/user`, {'login': newName.value, 'password': newPassword.value})
                   .then((response) => {
                     console.log(response);
@@ -52,7 +54,13 @@ export function profile() {
                     alert(`ошибка:${response}`);
                   });
             } else {
-              alert(`Invalid data! ${checkName.status ? '' : checkName.err}, ${checkPassword.status ? '' : chechName.err}`);
+              console.log('как-то сообщить юзеру что что-то не так');
+              if (!validEmail) {
+                console.log('невалидный email');
+              }
+              if (!validPassword) {
+                console.log('невалидный пароль');
+              }
             }
           });
         }
