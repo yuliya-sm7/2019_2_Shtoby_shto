@@ -2,7 +2,7 @@ import {isCorrectEmail} from '../../modules/validation.js';
 import {isCorrectPassword} from '../../modules/validation.js';
 import {isCorrectName} from '../../modules/validation.js';
 import {doPost} from '../../modules/ajax.js';
-import {createBoard} from '../../components/Board/board.js';
+import {createBoard} from '../Board/board.js';
 
 const template = require('./login.pug');
 
