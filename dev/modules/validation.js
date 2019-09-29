@@ -16,7 +16,6 @@ export function checkEmail(email = '') {
   return email.match(
       /^([a-z0-9_\\-]+\.)*[a-z0-9_\\-]+@([a-z0-9][a-z0-9\\-]*[a-z0-9]\.)+[a-z]{2,4}$/i,
   );
-
 }
 
 /**
