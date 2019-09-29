@@ -21,7 +21,7 @@ export function reg() {
     const checkEmail = isCorrectEmail(email);
     const checkPassword = isCorrectPassword(password, password);
     if (checkEmail.status && checkPassword.status) {
-      doPost('/registration', {'login': email, 'password': password})
+      doPost('/login', {'login': email, 'password': password})
           .then((response) => {
             if (response.status !== 200) {
               alert(response.message);
@@ -43,7 +43,7 @@ export function reg() {
     const checkPassword = isCorrectPassword(password, password);
     const checkName = isCorrectName(name);
     if (checkEmail.status && checkPassword.status && checkName.status) {
-      doPost('/registration', {'login': email, 'password': password, 'name': name})
+      doPost('/login', {'login': email, 'password': password, 'name': name})
           .then(() => createBoard())
           .catch(() => createBoard()); // временно
     } else {
