@@ -1,6 +1,6 @@
 import {doPut} from '../../modules/ajax';
-import {getCookie} from "../../modules/cookies_util";
-import {isCorrectName, isCorrectPassword, isCorrectEmail} from "../../modules/validation";
+import {getCookie} from '../../modules/cookies_util';
+import {checkName, checkPassword, checkEmail} from '../../modules/validation';
 
 /**
  * Work with profile
@@ -13,6 +13,7 @@ export function profile() {
   const application = document.getElementById('application');
 
   application.innerHTML = template();
+  application.innerHTML += ` <link rel="stylesheet" href="./Profile.css">`;
 
   const username = document.getElementById('username');
   username.value=getCookie('login');
@@ -28,8 +29,8 @@ export function profile() {
 
     const userId = getCookie('user_id');
 
-    const checkPassword = isCorrectPassword(newPassword.value, newPassword.value);
-    const checkName = isCorrectEmail(newName.value);
+    const checkPassword = checkPassword(newPassword.value, newPassword.value);
+    const checkName = checkEmail(newName.value);
 
     if (checkName.status && checkPassword.status) {
       doPut(`/user/${userId}`, {'login': newName.value, 'password': newPassword.value})

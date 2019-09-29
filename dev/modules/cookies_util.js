@@ -1,51 +1,47 @@
 // возвращает cookie если есть или undefined
 export function getCookie(name) {
-
-    var matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ))
-    return matches ? decodeURIComponent(matches[1]) : undefined
+  const matches = document.cookie.match(new RegExp(
+      '(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
 // уcтанавливает cookie
 export function setCookie(name, value, props) {
+  props = props || {};
 
-    props = props || {}
+  let exp = props.expires;
 
-    var exp = props.expires
+  if (typeof exp == 'number' && exp) {
+    const d = new Date();
 
-    if (typeof exp == "number" && exp) {
+    d.setTime(d.getTime() + exp*1000);
 
-        var d = new Date()
+    exp = props.expires = d;
+  }
 
-        d.setTime(d.getTime() + exp*1000)
+  if (exp && exp.toUTCString) {
+    props.expires = exp.toUTCString();
+  }
 
-        exp = props.expires = d
+  value = encodeURIComponent(value);
 
+  let updatedCookie = name + '=' + value;
+
+  for (const propName in props) {
+    updatedCookie += '; ' + propName;
+
+    const propValue = props[propName];
+
+    if (propValue !== true) {
+      updatedCookie += '=' + propValue;
     }
+  }
 
-    if(exp && exp.toUTCString) { props.expires = exp.toUTCString() }
-
-    value = encodeURIComponent(value)
-
-    var updatedCookie = name + "=" + value
-
-    for(var propName in props){
-
-        updatedCookie += "; " + propName
-
-        var propValue = props[propName]
-
-        if(propValue !== true){ updatedCookie += "=" + propValue }
-    }
-
-    document.cookie = updatedCookie
-
+  document.cookie = updatedCookie;
 }
 
 // удаляет cookie
 export function deleteCookie(name) {
-
-    setCookie(name, null, { expires: -1 })
-
+  setCookie(name, null, {expires: -1});
 }
