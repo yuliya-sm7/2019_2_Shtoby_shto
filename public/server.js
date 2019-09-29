@@ -29,6 +29,7 @@ const server = http.createServer((req, res) => {
   }
 
   const newPath = join(__dirname, `${currentUrl}`);
+  console.log(newPath);
 
   try {
     body = fs.readFileSync(newPath);
