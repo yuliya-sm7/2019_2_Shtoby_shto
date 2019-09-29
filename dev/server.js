@@ -7,13 +7,13 @@ const url = require('url');
 const filetypes = {
     "html": "text/html",
     "css" : "text/css",
-    "js"  : "application/javascript"
+    "js"  : "application/javascript",
+    "svg" : "image/svg+xml"
 };
 
 const server = http.createServer((req, res) => {
     let currentUrl = url.parse(req.url, true).pathname;
-
-
+    
     if (/^[^.]+$/.test(currentUrl)) {
         if (!currentUrl.endsWith('/')) {
             res.setHeader("Location", req.url + "/");
@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', `${filetypes[ft]}`);
     }
 
-    const newPath = join(__dirname, `public${currentUrl}`)
+    const newPath = join(__dirname, `../public${currentUrl}`)
 
     try {
         body = fs.readFileSync(newPath)
