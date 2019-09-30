@@ -1,7 +1,7 @@
 import {doPut, doGet} from '../../modules/ajax';
 import {checkName, checkPassword, checkEmail} from '../../modules/validation';
 
-const template = require('./Profile.pug');
+const template = require('./profile.pug');
 /**
  * Work with profile
  *
