@@ -279,6 +279,14 @@ a.tabs {
     display: block;
 }
 
-#tab_2:checked ~ #Action,
-#tab_3:checked ~ #Cards,
-#tab_4:checked ~ #Settings
+#tab_2:checked ~ #Action {
+    display: block;
+}
+
+#tab_3:checked ~ #Cards {
+    display: block;
+}
+
+#tab_4:checked ~ #Settings {
+    display: block;
+}
