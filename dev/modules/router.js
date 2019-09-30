@@ -1,4 +1,4 @@
-import {profile} from '../components/Profile/Profile';
+import {profile} from '../components/Profile/profile';
 import {reg} from '../components/Login/login';
 import {createBoard} from '../components/Board/board';
 import Utils from './services/Utils';
